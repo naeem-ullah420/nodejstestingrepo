@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('components/header.ejs')%>
+  </head>
+  <body>
+    <%- include('components/navbar.ejs')%> <%-
+    include('components/create-post.ejs')%>
+
+    <script>
+      let image = document.getElementById("image-label");
+      let imageLabel = document.querySelector(".image-label");
+      image.addEventListener("change", () => {
+        console.log(image.value);
+        const imageName = image.value.split("\\").splice(-1)[0];
+        imageLabel.innerHTML = imageName;
+        // console.log(
+        //   imageName,
+        //   imageName.split(".").splice("-1").toString(),
+        //   ["png", "jpg", "jpeg", "gif"].indexOf(
+        //     imageName.split(".").splice("-1").toString()
+        //   )
+        // );
+      });
+    </script>
+  </body>
+</html>

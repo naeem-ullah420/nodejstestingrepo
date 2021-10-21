@@ -1,0 +1,25 @@
+<div class="navbar">
+    <div class="left-side">
+        <% if(login){%>
+            
+                <ul>
+                    <li><a href="/profile" class="<% if(title=="Profile") { %> nav-active <% } %> ">Home</a></li>
+                    <li><a href="/create-post" class="<% if(title=="Create Post") { %> nav-active <% } %> ">Create Post</a></li>
+                    <li><a href="/all-posts/1" class="<% if(title=="All Posts") { %> nav-active <% } %> ">All Posts</a></li>
+                </ul>
+        
+        <% } %> 
+    </div>
+    <div class="right-side">
+        <% if(login){%>
+            <ul>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        <%}else{ %> 
+        <ul>
+            <li><a href="/signup" class="<% if(title=="SignUp") { %> nav-active <% } %> " >SignUp</a></li>
+            <li><a href="/login" class="<% if(title=="SignIn") { %> nav-active <% } %> ">SignIn</a></li>
+        </ul>
+        <% } %> 
+    </div>
+</div>

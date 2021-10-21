@@ -1,0 +1,40 @@
+<div class="post">
+  <div class="card">
+    <div class="heading">
+      <h2 align="center">Create Post</h2>
+    </div>
+    <% if(errors){ %>
+    <div class="errors">
+      <ul>
+        <% errors.forEach(e=>{%>
+        <li><%= e.msg %></li>
+        <%}) %>
+      </ul>
+    </div>
+    <% } %>
+    <form action="/create-post" method="post" enctype="multipart/form-data">
+      <div class="group">
+        <label for="">Title</label>
+        <input
+          type="text"
+          name="title"
+          class="control"
+          value="<% if(data) {%><%=data.title %><% } %>"
+        />
+      </div>
+      <div class="group">
+        <label for="">Body</label>
+        <textarea name="body" class="control">
+          <% if(data) {%><%=data.body %><% } %></textarea
+        >
+      </div>
+      <div class="group">
+        <label for="image-label" class="image-label">Upload Image</label>
+        <input type="file" name="image" id="image-label" />
+      </div>
+      <div class="group">
+        <input type="submit" value="Create Post" class="btn btn-success" />
+      </div>
+    </form>
+  </div>
+</div>

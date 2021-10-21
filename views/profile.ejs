@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('components/header.ejs')%>
+  </head>
+  <body>
+    <%- include('components/navbar.ejs')%>
+    <div class="profile">
+      <div class="card">
+        <div class="icon">
+          <%= req.auth_user.full_name.charAt(0).toUpperCase() %>
+        </div>
+        <div class="name">
+          <%=
+          req.auth_user.full_name.charAt(0).toUpperCase()+req.auth_user.full_name.substring(1)
+          %>
+        </div>
+        <div class="email"><%= req.auth_user.email %></div>
+      </div>
+    </div>
+  </body>
+</html>

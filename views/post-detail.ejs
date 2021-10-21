@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('components/header.ejs')%>
+  </head>
+  <body>
+    <%- include('components/navbar.ejs')%>
+    <div class="main-container">
+      <%- include('components/post-banner.ejs')%>
+      <div class="content-container">
+        <div class="post-container">
+          <div class="post-detail">
+            <div class="actions">
+              <a href="/update-post/<%=post._id%>">Update &rarr;</a>
+              <a href="/delete-post/<%=post._id%>">Delete &rarr;</a>
+            </div>
+            <div class="title"><%=post.title %></div>
+            <div class="image">
+              <img src="/assets/storage/uploaded/images/<%= post.image %>" />
+            </div>
+            <div class="body"><%= post.body %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
